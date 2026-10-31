@@ -1,0 +1,18 @@
+[package]
+name = "phantomdep-analyzer"
+version = "1.0.0"
+edition = "2021"
+description = "Graph analyser for PhantomDep: cycles, depth and ghost scoring"
+license = "MIT"
+
+[[bin]]
+name = "phantomdep-analyzer"
+path = "src/main.rs"
+
+[dependencies]
+# Deliberately empty. See .kiro/steering/tech.md — standard library only.
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

@@ -1,0 +1,6 @@
+pyyaml==6.0.1
+requests>=2.31.0
+rich==13.7.0
+jinja2==3.1.2
+# fixture note: this comment and the blank line below must be ignored by the parser
+

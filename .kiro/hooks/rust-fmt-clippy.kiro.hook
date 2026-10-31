@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "cargo fmt + clippy on Rust file save",
+  "description": "The analyser must stay clippy-clean; tech steering makes warnings a build failure.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["analyzer-rs/**/*.rs"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cargo fmt --manifest-path analyzer-rs/Cargo.toml && cargo clippy --manifest-path analyzer-rs/Cargo.toml --offline -- -D warnings"
+  }
+}

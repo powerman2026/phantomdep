@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Fixture regression on manifest change",
+  "description": "Any edit to a fixture or a parser must keep the documented defect counts true. Runs the same check as scripts/build.sh.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "fixtures/**",
+      "internal/scan/**",
+      "analyzer-rs/src/**"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "go build -trimpath -o bin/phantomdep ./cmd/phantomdep && python3 scripts/verify.py"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "_comment": [
+    "Offline advisory dataset for the PhantomDep intel stage.",
+    "Licence values are real for the real packages listed here. Advisory entries are",
+    "illustrative fixtures used to exercise the merge path, not an authoritative feed.",
+    "Run the service with --live to query OSV.dev, which is the authoritative source.",
+    "Packages absent from this file resolve to license=unknown and an empty advisory list."
+  ],
+  "packages": {
+    "npm": {
+      "express": { "license": "MIT", "advisories": [] },
+      "lodash": {
+        "license": "MIT",
+        "advisories": [
+          {
+            "id": "CVE-2021-23337",
+            "severity": "high",
+            "summary": "Command injection in lodash template via the variable option",
+            "fixedIn": "4.17.21"
+          }
+        ]
+      },
+      "moment": { "license": "MIT", "deprecated": false, "advisories": [] },
+      "left-pad": { "license": "WTFPL", "deprecated": true, "advisories": [] },
+      "request": { "license": "Apache-2.0", "deprecated": true, "advisories": [] },
+      "chalk": { "license": "MIT", "advisories": [] },
+      "@ghost/ouija": { "license": "unlicensed", "advisories": [] },
+      "@ghost/seance": { "license": "unlicensed", "advisories": [] }
+    },
+    "pypi": {
+      "pyyaml": { "license": "MIT", "advisories": [] },
+      "requests": { "license": "Apache-2.0", "advisories": [] },
+      "rich": { "license": "MIT", "advisories": [] },
+      "jinja2": {
+        "license": "BSD-3-Clause",
+        "advisories": [
+          {
+            "id": "CVE-2024-34064",
+            "severity": "medium",
+            "summary": "Jinja2 xmlattr filter accepts keys that permit HTML attribute injection",
+            "fixedIn": "3.1.4"
+          }
+        ]
+      }
+    },
+    "go": {
+      "github.com/gin-gonic/gin": { "license": "MIT", "advisories": [] },
+      "github.com/spf13/viper": { "license": "MIT", "advisories": [] },
+      "golang.org/x/crypto": {
+        "license": "BSD-3-Clause",
+        "advisories": [
+          {
+            "id": "CVE-2023-48795",
+            "severity": "medium",
+            "summary": "Terrapin attack allows prefix truncation of SSH handshakes",
+            "fixedIn": "0.17.0"
+          }
+        ]
+      }
+    },
+    "cargo": {
+      "serde": { "license": "MIT OR Apache-2.0", "advisories": [] },
+      "tokio": { "license": "MIT", "advisories": [] }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "gofmt on Go file save",
+  "description": "Keeps the orchestrator gofmt-clean so `go vet` stays meaningful in CI.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["**/*.go"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "gofmt -w $FILE"
+  }
+}

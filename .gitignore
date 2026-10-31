@@ -1,0 +1,31 @@
+# --- build artefacts ---
+/bin/
+/dist/
+analyzer-rs/target/
+*.wasm
+*.o
+*.a
+
+# --- runtime output ---
+/reports/
+*.db
+*.sqlite
+
+# --- language caches ---
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+
+# --- editor / OS noise ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ---------------------------------------------------------------------------
+# IMPORTANT: the /.kiro directory MUST stay in version control.
+# Kiroween 2026 judges require /.kiro at the repository root to verify that
+# specs, hooks and steering were actually used during the build.
+# Never add ".kiro" or any sub-path of it to this file.
+# ---------------------------------------------------------------------------

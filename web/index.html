@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhantomDep — dependency graveyard</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">◭</span>
+    <span class="name">PhantomDep</span>
+    <span class="ver">v1.0.0</span>
+  </div>
+  <div class="stages" id="health" aria-live="polite">
+    <span class="stage pending">checking pipeline…</span>
+  </div>
+</header>
+
+<main>
+  <section class="controls">
+    <form id="scan-form" autocomplete="off">
+      <label class="field">
+        <span class="label">Repository path</span>
+        <input id="path" name="path" type="text" spellcheck="false"
+               placeholder="/absolute/path/to/a/repository">
+      </label>
+      <button id="scan" type="submit">Scan</button>
+    </form>
+    <div class="chips" id="fixtures"></div>
+  </section>
+
+  <div id="banners" class="banners"></div>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="split">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Dependency graveyard</h2>
+        <div class="legend">
+          <span><i class="dot live"></i>live</span>
+          <span><i class="dot phantom"></i>phantom</span>
+          <span><i class="dot undeclared"></i>undeclared</span>
+        </div>
+      </div>
+      <div id="graph" class="graph">
+        <p class="empty">Run a scan to populate the graveyard.</p>
+      </div>
+      <div id="detail" class="detail"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Findings</h2>
+        <span class="count" id="finding-count"></span>
+      </div>
+      <ul class="findings" id="findings">
+        <li class="empty">No scan yet.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Packages</h2>
+      <span class="count" id="package-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="packages">
+        <thead>
+          <tr>
+            <th>Package</th><th>Ecosystem</th><th>Declared</th>
+            <th>Imported</th><th>Files</th><th>Version</th>
+            <th>Licence</th><th>State</th>
+          </tr>
+        </thead>
+        <tbody id="packages">
+          <tr><td colspan="8" class="empty">No scan yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Local only — no source leaves this machine unless the intel service was started with <code>--live</code>.</span>
+    <span id="timing"></span>
+  </footer>
+</main>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
